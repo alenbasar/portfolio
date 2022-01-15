@@ -2,6 +2,7 @@
   height: 100%;
   &__canvas {
     canvas {
+      user-select: none;
       height: 600px;
       width: 600px;
     }
