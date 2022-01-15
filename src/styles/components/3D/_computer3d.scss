@@ -1,0 +1,9 @@
+.c-computer3d {
+  height: 100%;
+  &__canvas {
+    canvas {
+      height: 600px;
+      width: 600px;
+    }
+  }
+}
