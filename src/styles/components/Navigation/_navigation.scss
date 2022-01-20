@@ -2,28 +2,34 @@
   height: 100vh;
   width: 10rem;
   display: flex;
-  position: absolute;
+  position: fixed;
   flex-direction: column;
   background-color: black;
+
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-around;
   //   gap: 20%;
 
   &__logo {
     color: white;
   }
 
-  &__list {
+  &__desktop-menu {
     display: flex;
+    position: inherit;
     flex-direction: column;
+    top: 10rem;
     list-style: none;
     flex: 0 1 auto;
-    align-items: center;
     gap: 4rem;
-    font-size: 1.4rem;
+    align-items: center;
 
+    // font-size: 1.4rem;
     &__item {
       color: white;
+      user-select: none;
+      text-decoration: none;
+      cursor: pointer;
     }
   }
 

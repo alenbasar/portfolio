@@ -1,4 +1,4 @@
-import React, { useRef, Suspense } from 'react';
+import React, { useRef, Suspense, useEffect } from 'react';
 import { Canvas, useThree, useFrame } from '@react-three/fiber';
 import { OrbitControls } from '@react-three/drei/core/OrbitControls';
 import { useGLTF } from '@react-three/drei/core/useGLTF';
@@ -9,8 +9,13 @@ function ComputerModel(props) {
   const group = useRef();
   const ref = useRef();
   const { nodes } = useGLTF('lowres computer.glb');
-
   useFrame((state, delta) => (group.current.rotation.y += 0.004));
+  useEffect(() => {
+    const time = setTimeout(() => {
+      useFrame((state, delta) => (group.current.rotation.y += 0.004));
+    }, 1000);
+    return () => clearTimeout(time);
+  }, []);
 
   return (
     <group ref={group} {...props} dispose={null} antialias={true}>
