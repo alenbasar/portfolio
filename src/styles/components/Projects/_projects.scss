@@ -1,5 +1,13 @@
 .c-projects {
-  background-color: black;
   height: 100vh;
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__content {
+    // background-color: black;
+    font-size: 4rem;
+    // width: 5rem;
+    // height: 5rem;
+  }
 }

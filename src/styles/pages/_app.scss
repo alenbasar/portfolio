@@ -3,11 +3,12 @@
   flex-direction: row;
   align-items: space-between;
   .content {
-    // display: flex;
+    display: flex;
+    flex-direction: column;
     position: relative;
     // left: 10vw;
     // left: 100%;
     left: 10rem;
-    width: 100%;
+    width: 90.9vw;
   }
 }

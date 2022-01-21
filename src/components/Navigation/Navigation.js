@@ -10,12 +10,17 @@ import {
   scrollSpy,
   scroller,
 } from 'react-scroll';
+import { scrollSettings } from '../../constants/scrollSettings';
 
 const Navigation = () => {
   const renderDesktopMenu = (menuItem) => {
     if (menuItem.to) {
       return (
-        <Link className='c-navigation__desktop-menu__item' to={menuItem.to}>
+        <Link
+          className='c-navigation__desktop-menu__item'
+          to={menuItem.to}
+          {...scrollSettings}
+        >
           {menuItem.label}
         </Link>
       );
