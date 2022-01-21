@@ -11,6 +11,8 @@ import {
   scroller,
 } from 'react-scroll';
 import { scrollSettings } from '../../constants/scrollSettings';
+import data from '../../assets/svgs.json';
+import DOMPurify from 'dompurify';
 
 const Navigation = () => {
   const renderDesktopMenu = (menuItem) => {
@@ -39,6 +41,10 @@ const Navigation = () => {
 
   return (
     <header className='c-navigation'>
+      <div
+        className='c-navigation__logo'
+        dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(data.logo) }}
+      ></div>
       <ul className='c-navigation__desktop-menu'>
         {DesktopMenu.map((m) => (
           <React.Fragment key={m.key}>{renderDesktopMenu(m)}</React.Fragment>
