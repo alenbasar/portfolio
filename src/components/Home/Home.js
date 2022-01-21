@@ -11,17 +11,33 @@ import {
   scroller,
 } from 'react-scroll';
 import { scrollSettings } from '../../constants/scrollSettings';
+import { motion, useViewportScroll, useTransform } from 'framer-motion';
 
 const Home = (props) => {
   const { className = '', ...restProps } = props;
+  const { scrollYProgress } = useViewportScroll();
+  const scale = useTransform(scrollYProgress, [1, 0], [-2, 1]);
 
   return (
     <section className='c-home' {...restProps}>
-      <div className='c-home__intro'>
-        <h2>Hi, my name is Alen</h2>
-        <h2>I'm a developer from Sydney</h2>
-        <h2>Welcome to my portfolio</h2>
-      </div>
+      <motion.div
+        className='c-home__intro'
+        style={{
+          scale,
+        }}
+      >
+        {/* <motion.div
+          className="item"
+          style={{
+            scaleY: scrollYProgress
+          }}
+        /> */}
+        <div className=''>
+          <h2>Hi, my name is Alen</h2>
+          <h2>I'm a developer from Sydney</h2>
+          <h2>Welcome to my portfolio</h2>
+        </div>
+      </motion.div>
 
       <div className='c-home__3d-container'>
         <Computer3D />

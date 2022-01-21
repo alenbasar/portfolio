@@ -5,9 +5,10 @@
   position: fixed;
   flex-direction: column;
   background-color: #272727;
-  // align-items: center;
+  align-items: center;
   // justify-content: space-around;
   &__logo {
+    margin: 1.5rem 0;
     svg {
       width: 100%;
       path {
@@ -18,30 +19,23 @@
 
   &__desktop-menu {
     display: flex;
-    position: inherit;
     flex-direction: column;
-    top: 6rem;
     list-style: none;
     border-top: 1px solid #5a5a5a;
-    // align-items: center;
     &__item {
       display: flex;
       align-items: center;
       color: white;
       user-select: none;
       text-decoration: none;
-
       cursor: pointer;
       width: 10rem;
       height: 3rem;
-      padding-left: 0.3rem;
+      padding-left: 0.15rem;
       border-bottom: 1px solid #5a5a5a;
 
       &:before {
-        // left: -50px;
-        // top: 0;
         left: 0;
-        // transform: translateY(-1.5rem);
         content: '';
         position: absolute;
         width: 100%;
@@ -53,26 +47,10 @@
         z-index: -1;
       }
 
-      // &:hover {
-      //   &:before {
-      //     transform: scale(2, 2);
-      //     // width: 10rem;
-      //     background: #ffffff;
-      //     height: 1px;
-      //     transform: translateY(1.5rem);
-      //     // top: 0;
-      //   }
-      // }
-      &.is-active {
-        // text-align: center;
-        // justify-content: center;
-      }
       &.is-active,
       &:hover {
         &:before {
           transform: translateX(0);
-          // transform: translateY(-0.5rem);
-          // width: 10vw;
         }
       }
     }
